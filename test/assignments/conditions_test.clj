@@ -21,3 +21,10 @@
     (is (= 2 (harishchandra 2))))
   (testing "false value"
     (is (= nil (harishchandra (zero? 1))))))
+
+
+(deftest yudishtira-function
+  (testing "true value"
+    (is (= 2 (yudishtira 2))))
+  (testing "false value"
+    (is (= :Ashwathama (yudishtira false)))))
