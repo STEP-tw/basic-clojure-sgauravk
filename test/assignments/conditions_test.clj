@@ -28,3 +28,10 @@
     (is (= 2 (yudishtira 2))))
   (testing "false value"
     (is (= :Ashwathama (yudishtira false)))))
+
+
+(deftest duplicate-first-func
+  (testing "when collection is empty"
+    (is (= nil (duplicate-first []))))
+  (testing "when collection is not empty"
+    (is (= [1 1 2 3] (duplicate-first [1 2 3])))))

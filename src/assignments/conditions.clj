@@ -37,7 +37,7 @@
    :use          '[when-first concat]
    :alternates   '[empty? seq? conj into]
    :implemented? false}
-  [coll])
+  [coll] (when-first [x coll] (cons x coll)))
 
 (defn five-point-someone
   "Returns :chetan-bhagat if y is 5.
