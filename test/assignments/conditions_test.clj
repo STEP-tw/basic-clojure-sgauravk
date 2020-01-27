@@ -48,6 +48,22 @@
     (is (= :universe (five-point-someone 10 10)))))
 
 
+(deftest zero-aliases-func
+  (testing "when param is 0"
+    (is (= :zero (zero-aliases 0))))
+  (testing "when param is empty vec"
+    (is (= :empty (zero-aliases []))))
+  (testing "when param is empty list"
+    (is (= :empty (zero-aliases `()))))
+  (testing "when param is empty string"
+    (is (= :empty-string (zero-aliases ""))))
+  (testing "when param is empty set"
+    (is (= :empty-set (zero-aliases #{}))))
+  (testing "when param is empty map"
+    (is (= :empty-map (zero-aliases {}))))
+  )
+
+
 (deftest zero-separated-palindrome-func
   (testing "when collection is empty"
     (is (= `(0) (zero-separated-palindrome []))))

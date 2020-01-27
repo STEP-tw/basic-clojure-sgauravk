@@ -99,7 +99,13 @@
   {:level        :easy
    :use          '[case]
    :implemented? false}
-  [zero-like-value])
+  [zero-like-value] (case zero-like-value
+                      0 :zero
+                      [] :empty
+                      `() :empty
+                      #{} :empty-set
+                      {} :empty-map
+                      "" :empty-string))
 
 (defn zero-separated-palindrome
   "Given a sequence of numbers, increment the list
