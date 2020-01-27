@@ -14,3 +14,10 @@
     (is (= 6 (informative-divide 6 1))))
   (testing "zero denominator"
     (is (= :Infinite (informative-divide 3 0)))))
+
+
+(deftest harishchandra-function
+  (testing "true value"
+    (is (= 2 (harishchandra 2))))
+  (testing "false value"
+    (is (= nil (harishchandra (zero? 1))))))
