@@ -35,3 +35,14 @@
     (is (= nil (duplicate-first []))))
   (testing "when collection is not empty"
     (is (= [1 1 2 3] (duplicate-first [1 2 3])))))
+
+
+(deftest five-point-someone-func
+  (testing "when y is 5"
+    (is (= :chetan-bhagat (five-point-someone 3 5))))
+  (testing "when x is 5"
+    (is (= :satan-bhagat (five-point-someone 5 3))))
+  (testing "when x is greater than y"
+    (is (= :greece (five-point-someone 7 6))))
+  (testing "when any of conditions does not match"
+    (is (= :universe (five-point-someone 10 10)))))
