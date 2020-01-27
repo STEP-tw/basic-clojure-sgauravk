@@ -46,3 +46,10 @@
     (is (= :greece (five-point-someone 7 6))))
   (testing "when any of conditions does not match"
     (is (= :universe (five-point-someone 10 10)))))
+
+
+(deftest zero-separated-palindrome-func
+  (testing "when collection is empty"
+    (is (= `(0) (zero-separated-palindrome []))))
+  (testing "when collection is not empty"
+    (is (= `(4 3 2 0 2 3 4) (zero-separated-palindrome [1 2 3])))))
