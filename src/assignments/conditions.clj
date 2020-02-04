@@ -4,14 +4,14 @@
   "Returns the result of x/y unless y is 0. Returns nil when y is 0"
   {:level        :easy
    :use          '[when-not zero?]
-   :implemented? false}
+   :implemented? true}
   [x y] (when-not (zero? y) (/ x y)))
 
 (defn informative-divide
   "Returns the result of x/y unless y is 0. Returns :infinite when y is 0"
   {:level        :easy
    :use          '[if-not zero?]
-   :implemented? false}
+   :implemented? true}
   [x y] (if-not (zero? y) (/ x y) :Infinite))
 
 (defn harishchandra
@@ -19,7 +19,7 @@
   Falsy values(false and nil) return nil"
   {:level        :easy
    :use          '[when-let]
-   :implemented? false}
+   :implemented? true}
   [x] (when-let [x x] x))
 
 (defn yudishtira
@@ -27,7 +27,7 @@
   Falsy values(false and nil) return :ashwathama"
   {:level        :easy
    :use          '[if-let]
-   :implemented? false}
+   :implemented? true}
   [x] (if-let [x x] x :Ashwathama))
 
 (defn duplicate-first
@@ -36,7 +36,7 @@
   {:level        :easy
    :use          '[when-first concat]
    :alternates   '[empty? seq? conj into]
-   :implemented? false}
+   :implemented? true}
   [coll] (when-first [x coll] (cons x coll)))
 
 (defn five-point-someone
@@ -46,7 +46,7 @@
   Otherwise it returns :universe"
   {:level        :easy
    :use          '[cond]
-   :implemented? false}
+   :implemented? true}
   [x y] (cond
           (= y 5) :chetan-bhagat
           (= x 5) :satan-bhagat
@@ -98,7 +98,7 @@
   \"\"  -> :empty-string"
   {:level        :easy
    :use          '[case]
-   :implemented? false}
+   :implemented? true}
   [zero-like-value] (case zero-like-value
                       0 :zero
                       [] :empty
@@ -114,6 +114,6 @@
   [1 2 3] -> (4 3 2 0 2 3 4)"
   {:level        :easy
    :use          '[as-> reverse]
-   :implemented? false}
+   :implemented? true}
   [coll] (as-> (map inc coll) coll
                (concat (reverse coll) (cons 0 coll))))
