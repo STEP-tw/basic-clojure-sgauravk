@@ -61,6 +61,8 @@
     (is (= :empty-set (zero-aliases #{}))))
   (testing "when param is empty map"
     (is (= :empty-map (zero-aliases {}))))
+  (testing "when param is non empty value"
+    (is (= :not-zero (zero-aliases 6))))
   )
 
 
