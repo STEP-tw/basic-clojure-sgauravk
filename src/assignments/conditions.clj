@@ -116,5 +116,7 @@
   {:level        :easy
    :use          '[as-> reverse]
    :implemented? true}
-  [coll] (as-> (map inc coll) coll
-               (concat (reverse coll) (cons 0 coll))))
+  [coll] (if (every? number? coll)
+           (as-> (map inc coll) coll
+                 (concat (reverse coll) (cons 0 coll)))
+           coll))

@@ -70,4 +70,6 @@
   (testing "when collection is empty"
     (is (= `(0) (zero-separated-palindrome []))))
   (testing "when collection is not empty"
-    (is (= `(4 3 2 0 2 3 4) (zero-separated-palindrome [1 2 3])))))
+    (is (= `(4 3 2 0 2 3 4) (zero-separated-palindrome [1 2 3]))))
+  (testing "when collection is not empty and not number"
+    (is (= `(:a) (zero-separated-palindrome [:a])))))
