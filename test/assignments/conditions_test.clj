@@ -62,8 +62,7 @@
   (testing "when param is empty map"
     (is (= :empty-map (zero-aliases {}))))
   (testing "when param is non empty value"
-    (is (= :not-zero (zero-aliases 6))))
-  )
+    (is (= :not-zero (zero-aliases 6)))))
 
 
 (deftest zero-separated-palindrome-func
@@ -73,3 +72,14 @@
     (is (= `(4 3 2 0 2 3 4) (zero-separated-palindrome [1 2 3]))))
   (testing "when collection is not empty and not number"
     (is (= `(:a) (zero-separated-palindrome [:a])))))
+
+
+(deftest order-in-words-func
+  (testing "when x is y and y is greater than z"
+    (is (= [:x-greater-than-y :y-greater-than-z] (order-in-words 4 3 2))))
+  (testing "when x is y and z is greater than x"
+    (is (= [:x-greater-than-y :z-greater-than-x] (order-in-words 4 3 5))))
+  (testing "when z is greater than x"
+    (is (= [:y-greater-than-z] (order-in-words 3 4 2))))
+  (testing "when z is greater than x"
+    (is (= [:z-greater-than-x] (order-in-words 2 3 4)))))
