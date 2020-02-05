@@ -94,3 +94,14 @@
     (is (= '(1 2 3 1 2) (repeat-and-truncate [1 2 3] true false 5))))
   (testing "should return list of 5 elements after repeating and truncating"
     (is (= '(1 2 3 1 2) (repeat-and-truncate [1 2 3] true true 5)))))
+
+
+(deftest conditions-apply-func
+  (testing "should return wonder-woman when sequence contains 1 and 3"
+    (is (= :wonder-woman (conditions-apply [0 1 0 3]))))
+  (testing "should return durga when sequence contains :a :b and :c"
+    (is (= :durga (conditions-apply [:a :b :e :c]))))
+  (testing "should return cleopatra when sequence contains [2 3] and [4 5]"
+    (is (= :cleopatra (conditions-apply [[0 0] [2 3] [1 1] [4 5] [5 6]]))))
+  (testing "should return tuntun when no other sequences matches"
+    (is (= :tuntun (conditions-apply [7 8 9])))))
