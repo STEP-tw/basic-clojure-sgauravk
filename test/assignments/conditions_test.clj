@@ -83,3 +83,14 @@
     (is (= [:y-greater-than-z] (order-in-words 3 4 2))))
   (testing "when z is greater than x"
     (is (= [:z-greater-than-x] (order-in-words 2 3 4)))))
+
+
+(deftest repeat-and-truncate-func
+  (testing "should return list of 2 elements without repeating"
+    (is (= '(1 2) (repeat-and-truncate [1 2 3] false false 2))))
+  (testing "should return list of single element after truncating"
+    (is (= '(1) (repeat-and-truncate [1 2 3] false true 2))))
+  (testing "should return list of 5 repeated elements"
+    (is (= '(1 2 3 1 2) (repeat-and-truncate [1 2 3] true false 5))))
+  (testing "should return list of 5 elements after repeating and truncating"
+    (is (= '(1 2 3 1 2) (repeat-and-truncate [1 2 3] true true 5)))))
