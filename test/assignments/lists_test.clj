@@ -66,3 +66,10 @@
     (is (true? (ascending? [1 2 3 4 5 6 6]))))
   (testing "false condition"
     (is (false? (ascending? [1 2 3 2 1 0])))))
+
+
+(deftest sum-of-adjacent-digits-test
+  (testing "should return the adjacent sum of vector"
+    (is (= [3 5] (sum-of-adjacent-digits [1 2 3]))))
+  (testing "should return empty vec for vec with single element"
+    (is (= [] (sum-of-adjacent-digits [1])))))
