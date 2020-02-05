@@ -70,7 +70,7 @@
    :dont-use     '[reverse]
    :implemented? true}
   [coll]
-  (reduce (fn [x y] (cons y x)) [] coll))
+  (reduce conj `() coll)
 
 (defn every?'
   "Implement your own version of every? that checks if every
