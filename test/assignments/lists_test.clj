@@ -32,3 +32,14 @@
     (is (= 2 (count {:one 1 :two 2}))))
   (testing "string"
     (is (= 6 (count "abcdef")))))
+
+
+(deftest reverse-test
+  (testing "should reverse the vector"
+    (is (= [5 4 3 2 1] (reverse' [1 2 3 4 5]))))
+  (testing "should reverse the list"
+    (is (= '(4 3 2) (reverse' '(2 3 4)))))
+  (testing "should reverse map"
+    (is (= '([:b 4] [:a 3]) (reverse' {:a 3 :b 4}))))
+  (testing "should reverse the string"
+    (is (= '(\l \e \v \e \l) (reverse' "level")))))
