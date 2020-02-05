@@ -19,3 +19,16 @@
     (is (= 15 (reduce' + [1 2 3 4 5]))))
   (testing "should return 0 when acc is zero while multiply"
     (is (zero? (reduce' * 0 [2 3 4 5])))))
+
+
+(deftest count-test
+  (testing "sequence length"
+    (is (= 5 (count' [1 2 3 4 5]))))
+  (testing "nil"
+    (is (= 0 (count' nil))))
+  (testing "empty vector"
+    (is (= 0 (count' []))))
+  (testing "map"
+    (is (= 2 (count {:one 1 :two 2}))))
+  (testing "string"
+    (is (= 6 (count "abcdef")))))
