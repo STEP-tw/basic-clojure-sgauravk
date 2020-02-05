@@ -70,7 +70,7 @@
    :dont-use     '[reverse]
    :implemented? true}
   [coll]
-  (reduce conj `() coll)
+  (when (seqable? coll) (reduce conj `() coll)))
 
 (defn every?'
   "Implement your own version of every? that checks if every

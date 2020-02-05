@@ -41,5 +41,7 @@
     (is (= '(4 3 2) (reverse' '(2 3 4)))))
   (testing "should reverse map"
     (is (= '([:b 4] [:a 3]) (reverse' {:a 3 :b 4}))))
+  (testing "should return nil for a single int"
+    (is (nil? (reverse' 1))))
   (testing "should reverse the string"
     (is (= '(\l \e \v \e \l) (reverse' "level")))))
