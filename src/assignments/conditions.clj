@@ -5,14 +5,18 @@
   {:level        :easy
    :use          '[when-not zero?]
    :implemented? true}
-  [x y] (when-not (zero? y) (/ x y)))
+  [x y]
+  (when-not (zero? y) (/ x y)))
 
 (defn informative-divide
   "Returns the result of x/y unless y is 0. Returns :infinite when y is 0"
   {:level        :easy
    :use          '[if-not zero?]
    :implemented? true}
-  [x y] (if-not (zero? y) (/ x y) :Infinite))
+  [x y]
+  (if-not (zero? y)
+    (/ x y)
+    :Infinite))
 
 (defn harishchandra
   "Only returns truthy values as themselves.
@@ -20,7 +24,8 @@
   {:level        :easy
    :use          '[when-let]
    :implemented? true}
-  [x] (when-let [x x] x))
+  [x]
+  (when-let [x x] x))
 
 (defn yudishtira
   "Only returns truthy values as themselves.
@@ -28,7 +33,10 @@
   {:level        :easy
    :use          '[if-let]
    :implemented? true}
-  [x] (if-let [x x] x :Ashwathama))
+  [x]
+  (if-let [x x]
+    x
+    :Ashwathama))
 
 (defn duplicate-first
   "Returns coll with the first element duplicated.
@@ -37,7 +45,9 @@
    :use          '[when-first concat]
    :alternates   '[empty? seq? conj into]
    :implemented? true}
-  [coll] (when-first [x coll] (cons x coll)))
+  [coll]
+  (when-first [x coll]
+    (cons x coll)))
 
 (defn five-point-someone
   "Returns :chetan-bhagat if y is 5.
@@ -47,11 +57,12 @@
   {:level        :easy
    :use          '[cond]
    :implemented? true}
-  [x y] (cond
-          (= y 5) :chetan-bhagat
-          (= x 5) :satan-bhagat
-          (> x y) :greece
-          :else :universe))
+  [x y]
+  (cond
+    (= y 5) :chetan-bhagat
+    (= x 5) :satan-bhagat
+    (> x y) :greece
+    :else :universe))
 
 (defn conditions-apply
   "Given a collection of any length, returns:
@@ -83,7 +94,7 @@
   (order-in-words 2 3 4) => [:z-greater-than-x]"
   {:level        :easy
    :use          '[cond-> conj]
-   :implemented? false}
+   :implemented? true}
   [x y z]
   (cond-> []
           (> x y) (conj :x-greater-than-y)
@@ -103,14 +114,15 @@
   {:level        :easy
    :use          '[case]
    :implemented? true}
-  [zero-like-value] (case zero-like-value
-                      0 :zero
-                      [] :empty
-                      `() :empty
-                      #{} :empty-set
-                      {} :empty-map
-                      "" :empty-string
-                      :not-zero))
+  [zero-like-value]
+  (case zero-like-value
+    0 :zero
+    [] :empty
+    `() :empty
+    #{} :empty-set
+    {} :empty-map
+    "" :empty-string
+    :not-zero))
 
 (defn zero-separated-palindrome
   "Given a sequence of numbers, increment the list
@@ -120,7 +132,8 @@
   {:level        :easy
    :use          '[as-> reverse]
    :implemented? true}
-  [coll] (if (every? number? coll)
-           (as-> (map inc coll) coll
-                 (concat (reverse coll) (cons 0 coll)))
-           coll))
+  [coll]
+  (if (every? number? coll)
+    (as-> (map inc coll) coll
+          (concat (reverse coll) (cons 0 coll)))
+    coll))
