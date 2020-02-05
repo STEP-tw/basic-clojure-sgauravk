@@ -40,7 +40,7 @@
    :dont-use     '[reduce]
    :implemented? true}
   ([f coll]
-   (when (not (empty? coll))
+   (when-not (empty? coll)
      (loop [acc (first coll) coll (rest coll)]
        (if (empty? coll)
          acc

@@ -13,6 +13,7 @@
   (testing "should return int from numbers collection"
     (is (= [6 7] (filter' int? [6 7 8.3 9.1])))))
 
+
 (deftest reduce-test
   (testing "should add all elements of array"
     (is (= 15 (reduce' + [1 2 3 4 5]))))
