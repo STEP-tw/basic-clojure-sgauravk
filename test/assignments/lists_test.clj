@@ -45,3 +45,10 @@
     (is (nil? (reverse' 1))))
   (testing "should reverse the string"
     (is (= '(\l \e \v \e \l) (reverse' "level")))))
+
+
+(deftest every-test
+  (testing "true condition"
+    (is (true? (every?' even? [2 4 6 8]))))
+  (testing "false condition"
+    (is (false? (every?' odd? [2 4 9 6 8])))))
