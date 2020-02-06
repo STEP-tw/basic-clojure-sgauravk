@@ -87,3 +87,10 @@
     (is (= [1 2 3] (union [1 2] [2 3]))))
   (testing "empty collection"
     (is (= [2] (union [] [2])))))
+
+
+(deftest cross-product-test
+  (testing "non-empty collection with repeated element"
+    (is (= [[1 4] [1 3] [1 5] [2 4] [2 3] [2 5] [3 4]] (cross-product [1 2 3] [4 3 5]))))
+  (testing "non-empty collection with single element"
+    (is (= [[1 2]] (cross-product [1] [2])))))
