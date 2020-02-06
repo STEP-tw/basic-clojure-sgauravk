@@ -73,3 +73,17 @@
     (is (= [3 5] (sum-of-adjacent-digits [1 2 3]))))
   (testing "should return empty vec for vec with single element"
     (is (= [] (sum-of-adjacent-digits [1])))))
+
+
+(deftest difference-test
+  (testing "non-empty collection"
+    (is (= [2 3] (difference [1] [1 2 3]))))
+  (testing "empty collection"
+    (is (= [] (difference [1 2 3] [1 2 3])))))
+
+
+(deftest union-test
+  (testing "non-empty collection"
+    (is (= [1 2 3] (union [1 2] [2 3]))))
+  (testing "empty collection"
+    (is (= [2] (union [] [2])))))
