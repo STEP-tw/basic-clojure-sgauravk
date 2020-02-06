@@ -40,11 +40,10 @@
    :dont-use     '[reduce]
    :implemented? true}
   ([f coll]
-   (when-not (empty? coll)
-     (loop [acc (first coll) coll (rest coll)]
-       (if (empty? coll)
-         acc
-         (recur (f acc (first coll)) (rest coll))))))
+   (loop [acc (first coll) coll (rest coll)]
+     (if (empty? coll)
+       acc
+       (recur (f acc (first coll)) (rest coll)))))
   ([f init coll]
    (reduce' f (cons init coll))))
 

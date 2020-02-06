@@ -65,7 +65,7 @@
     :else :universe))
 
 (defn is-present-once [subset superset]
-  (= (filter (into #{} subset) superset) subset))
+  (= (filter (set subset) superset) subset))
 
 (defn conditions-apply
   "Given a collection of any length, returns:
