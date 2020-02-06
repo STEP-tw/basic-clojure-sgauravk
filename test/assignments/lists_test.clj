@@ -101,3 +101,12 @@
     (is (= [1 1 2 2 3 3] (double-up [1 2 3]))))
   (testing "two dimensional collection"
     (is (= [[1 2] [1 2] [3 4] [3 4]] (double-up [[1 2] [3 4]])))))
+
+
+(deftest index-of-test
+  (testing "element present in collection"
+    (is (= 4 (index-of [1 2 3 4 5 6] 5))))
+  (testing "element not-present in collection"
+    (is (= -1 (index-of [1 2 3 4 5 6] 9))))
+  (testing "element present in single element collection"
+    (is (= 0 (index-of [6] 6)))))
