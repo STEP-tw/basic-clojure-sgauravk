@@ -232,7 +232,7 @@
   [4 5 6] => [16 16 16]"
   {:level        :easy
    :use          '[map constantly let]
-   :implemented? false}
+   :implemented? true}
   [coll]
   (let [first-num (first coll)]
     (map (constantly (* first-num first-num)) coll)))
@@ -266,7 +266,7 @@
   {:level        :easy
    :use          '[map cycle]
    :dont-use     '[loop recur map-indexed take take-nth]
-   :implemented? false}
+   :implemented? true}
   [coll]
   (map * coll (cycle [1 1 0])))
 
@@ -275,7 +275,7 @@
   {:level        :easy
    :use          '[empty? loop recur butlast rest]
    :dont-use     '[reverse]
-   :implemented? false}
+   :implemented? true}
   [coll]
   (loop [coll coll]
     (cond
@@ -290,7 +290,7 @@
   {:level        :easy
    :use          '[loop recur rest]
    :dont-use     '[.indexOf memfn]
-   :implemented? false}
+   :implemented? true}
   [coll n]
   (loop [coll coll counter 0]
     (cond
