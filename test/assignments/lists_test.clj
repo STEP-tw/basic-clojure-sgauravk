@@ -117,3 +117,10 @@
     (is (= [1 2 0 4 15 0 7] (muted-thirds [1 2 8 4 15 2 7]))))
   (testing "should return the list itself when list items is less then 3"
     (is (= [1 2] (muted-thirds [1 2])))))
+
+
+(deftest palindrome?-test
+  (testing "true condition"
+    (is (true? (palindrome? ["n" "a" "m" "a" "n"]))))
+  (testing "false condition"
+    (is (false? (palindrome? ["k" "a" "n" "n" "u"])))))
