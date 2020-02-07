@@ -110,3 +110,10 @@
     (is (= -1 (index-of [1 2 3 4 5 6] 9))))
   (testing "element present in single element collection"
     (is (= 0 (index-of [6] 6)))))
+
+
+(deftest muted-thirds-test
+  (testing "should replace every third element with 0 when list items is more then 3"
+    (is (= [1 2 0 4 15 0 7] (muted-thirds [1 2 8 4 15 2 7]))))
+  (testing "should return the list itself when list items is less then 3"
+    (is (= [1 2] (muted-thirds [1 2])))))
